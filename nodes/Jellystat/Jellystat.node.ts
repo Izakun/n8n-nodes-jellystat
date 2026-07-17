@@ -16,7 +16,7 @@ export class Jellystat implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Jellystat',
 		name: 'jellystat',
-		icon: { light: 'file:jellystat.svg', dark: 'file:jellystat.svg' },
+		icon: { light: 'file:jellystat.svg', dark: 'file:jellystat.dark.svg' },
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"]}}',
