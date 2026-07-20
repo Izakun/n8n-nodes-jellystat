@@ -1,4 +1,9 @@
-import { IAuthenticateGeneric, ICredentialType, INodeProperties } from 'n8n-workflow';
+import {
+	IAuthenticateGeneric,
+	ICredentialTestRequest,
+	ICredentialType,
+	INodeProperties,
+} from 'n8n-workflow';
 
 export class JellystatApi implements ICredentialType {
 	name = 'jellystatApi';
@@ -28,6 +33,14 @@ export class JellystatApi implements ICredentialType {
 			description: 'Jellystat API key (Settings → API Keys)',
 		},
 	];
+
+	test: ICredentialTestRequest = {
+		request: {
+			method: 'GET',
+			baseURL: '={{$credentials.baseUrl}}',
+			url: '/api/getLibraries',
+		},
+	};
 
 	authenticate: IAuthenticateGeneric = {
 		type: 'generic',
